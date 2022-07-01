@@ -10,7 +10,7 @@ class Translator {
         const puncReg=/\.|\?|\!|\,$/;
         let newArr=[];
         wordsArr.forEach((word,i)=>{
-                if(word.toLowerCase() in americanToBritishTitles) newArr.push('<span class=\"highlight\">'+americanToBritishTitles[word.toLowerCase()]+'</span>')
+                if(word.toLowerCase() in americanToBritishTitles) newArr.push('<span class=\"highlight\">'+americanToBritishTitles[word.toLowerCase()].charAt(0).toUpperCase()+americanToBritishTitles[word.toLowerCase()].slice(1)+'</span>')
                 else if(/\:/.test(word)) newArr.push('<span class=\"highlight\">'+word.split(':')[0]+'.'+word.split(':')[1]+'</span>');
                 else if(puncReg.test(word)) {
                     newArr.push(word.split(puncReg)[0]);
@@ -75,7 +75,7 @@ class Translator {
         let newArr=[];
         wordsArr.forEach((word,i)=>{
                 
-                if(getKeyFromValue(americanToBritishTitles,word.toLowerCase())) newArr.push('<span class=\"highlight\">'+getKeyFromValue(americanToBritishTitles,word.toLowerCase())+'</span>')
+                if(getKeyFromValue(americanToBritishTitles,word.toLowerCase())) newArr.push('<span class=\"highlight\">'+getKeyFromValue(americanToBritishTitles,word.toLowerCase()).charAt(0).toUpperCase()+getKeyFromValue(americanToBritishTitles,word.toLowerCase()).slice(1)+'</span>')
                 else if(/[0-9]{1,2}\.[0-9]{2}/.test(word)) {
                     
                     newArr.push('<span class=\"highlight\">'+word.split('.')[0]+':'+word.split('.')[1]+'</span>');
