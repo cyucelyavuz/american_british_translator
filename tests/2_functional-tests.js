@@ -34,7 +34,7 @@ suite('Functional Tests', () => {
             })
             .end((err,res)=>{
                 //console.log(res);
-                assert.equal(res.body.translation,'Invalid Translation Locale');
+                assert.equal(res.body.error,'Invalid value for locale field');
                 done()
             })
     })
