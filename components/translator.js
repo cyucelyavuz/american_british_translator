@@ -58,7 +58,7 @@ class Translator {
         
         return (/span/.test(wordsArr.join(' '))?
         wordsArr.join(' ').charAt(0).toUpperCase()+wordsArr.join(' ').slice(1):
-        'Everything looks good to me:)'       
+        'Everything looks good to me!'       
         );
         
     }
@@ -128,7 +128,7 @@ class Translator {
         })
         return (/span/.test(wordsArr.join(' '))?
         wordsArr.join(' ').charAt(0).toUpperCase()+wordsArr.join(' ').slice(1):
-        'Everything looks good to me:)'       
+        'Everything looks good to me!'       
         );
     }
 

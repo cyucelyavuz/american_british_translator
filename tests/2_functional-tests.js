@@ -92,7 +92,7 @@ suite('Functional Tests', () => {
             })
             .end((err,res)=>{
                 //console.log(res);
-                assert.equal(res.body.translation,'Everything looks good to me:)');
+                assert.equal(res.body.translation,'Everything looks good to me!');
                 done()
             })
     })
