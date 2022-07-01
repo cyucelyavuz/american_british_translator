@@ -10,8 +10,8 @@ class Translator {
         const puncReg=/\.|\?|\!|\,$/;
         let newArr=[];
         wordsArr.forEach((word,i)=>{
-                if(word.toLowerCase() in americanToBritishTitles) newArr.push('<span class=highlight>'+americanToBritishTitles[word.toLowerCase()]+'</span>')
-                else if(/\:/.test(word)) newArr.push('<span class=highlight>'+word.split(':')[0]+'.'+word.split(':')[1]+'</span>');
+                if(word.toLowerCase() in americanToBritishTitles) newArr.push('<span class=\"highlight\">'+americanToBritishTitles[word.toLowerCase()]+'</span>')
+                else if(/\:/.test(word)) newArr.push('<span class=\"highlight\">'+word.split(':')[0]+'.'+word.split(':')[1]+'</span>');
                 else if(puncReg.test(word)) {
                     newArr.push(word.split(puncReg)[0]);
                     newArr.push(word.match(puncReg)[0]);
@@ -43,10 +43,10 @@ class Translator {
         
         
         wordsArr.forEach((elem,i) =>  (elem.toLowerCase() in americanOnly) ? 
-                                    wordsArr[i]='<span class=highlight>'+americanOnly[elem.toLowerCase()]+'</span>' :   
+                                    wordsArr[i]='<span class=\"highlight\">'+americanOnly[elem.toLowerCase()]+'</span>' :   
                                         wordsArr[i]=elem );
         wordsArr.forEach((elem,i)=> (elem.toLowerCase() in americanToBritishSpelling) ?
-                                     wordsArr[i]='<span class=highlight>'+americanToBritishSpelling[elem.toLowerCase()]+'</span>':
+                                     wordsArr[i]='<span class=\"highlight\">'+americanToBritishSpelling[elem.toLowerCase()]+'</span>':
                                      wordsArr[i]=elem);
         
         wordsArr.forEach((elem,i)=>{     
@@ -75,10 +75,10 @@ class Translator {
         let newArr=[];
         wordsArr.forEach((word,i)=>{
                 
-                if(getKeyFromValue(americanToBritishTitles,word.toLowerCase())) newArr.push('<span class=highlight>'+getKeyFromValue(americanToBritishTitles,word.toLowerCase())+'</span>')
+                if(getKeyFromValue(americanToBritishTitles,word.toLowerCase())) newArr.push('<span class=\"highlight\">'+getKeyFromValue(americanToBritishTitles,word.toLowerCase())+'</span>')
                 else if(/[0-9]{1,2}\.[0-9]{2}/.test(word)) {
                     
-                    newArr.push('<span class=highlight>'+word.split('.')[0]+':'+word.split('.')[1]+'</span>');
+                    newArr.push('<span class=\"highlight\">'+word.split('.')[0]+':'+word.split('.')[1]+'</span>');
                     //console.log(newArr);
                 }
                 else if(puncReg.test(word)) {
@@ -112,11 +112,11 @@ class Translator {
         });
 
         wordsArr.forEach((elem,i) =>  (elem.toLowerCase() in britishOnly) ? 
-                                    wordsArr[i]='<span class=highlight>'+britishOnly[elem.toLowerCase()]+'</span>' :   
+                                    wordsArr[i]='<span class=\"highlight\">'+britishOnly[elem.toLowerCase()]+'</span>' :   
                                         wordsArr[i]=elem );
         wordsArr.forEach((elem,i)=>{
             (getKeyFromValue(americanToBritishSpelling,elem.toLowerCase())) ?
-                                    wordsArr[i]='<span class=highlight>'+getKeyFromValue(americanToBritishSpelling,elem.toLowerCase())+'</span>' :
+                                    wordsArr[i]='<span class=\"highlight\">'+getKeyFromValue(americanToBritishSpelling,elem.toLowerCase())+'</span>' :
                                     wordsArr[i]=elem
         });
         wordsArr.forEach((elem,i)=>{

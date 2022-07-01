@@ -19,7 +19,7 @@ suite('Functional Tests', () => {
             })
             .end((err,res)=>{
                 //console.log(res);
-                assert.equal(res.body.translation,'Mangoes are my <span class=highlight>favourite</span> fruit.');
+                assert.equal(res.body.translation,'Mangoes are my <span class=\"highlight\">favourite</span> fruit.');
                 done()
             })
     })
