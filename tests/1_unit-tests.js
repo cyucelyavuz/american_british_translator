@@ -42,12 +42,12 @@ suite('Unit Tests', () => {
     });
 
     test ('No Mr. Bond, I expect you to die.', done => { 
-        assert.equal (translator.translate('No Mr. Bond, I expect you to die.','american-to-british'),'No <span class=\"highlight\">mr</span> Bond, I expect you to die.');
+        assert.equal (translator.translate('No Mr. Bond, I expect you to die.','american-to-british'),'No <span class=\"highlight\">Mr</span> Bond, I expect you to die.');
         done();
     });
 
     test ('Dr. Grosh will see you now.', done => { 
-        assert.equal (translator.translate('Dr. Grosh will see you now.','american-to-british'),'<span class=\"highlight\">dr</span> Grosh will see you now.');
+        assert.equal (translator.translate('Dr. Grosh will see you now.','american-to-british'),'<span class=\"highlight\">Dr</span> Grosh will see you now.');
         done();
     });
 
@@ -96,12 +96,12 @@ suite ('British to American', ()=>{
 
 suite ('Extras', ()=>{
     test ('Have you met Mrs Kalyani?', done => { 
-        assert.equal (translator.translate('Have you met Mrs Kalyani?','british-to-american'),'Have you met <span class=\"highlight\">mrs.</span> Kalyani?');
+        assert.equal (translator.translate('Have you met Mrs Kalyani?','british-to-american'),'Have you met <span class=\"highlight\">Mrs.</span> Kalyani?');
         done();
     });
 
     test ('Prof Joyner of King\'s College, London.', done => { 
-        assert.equal (translator.translate('Prof Joyner of King\'s College, London.','british-to-american'),'<span class=\"highlight\">prof.</span> Joyner of King\'s College, London.');
+        assert.equal (translator.translate('Prof Joyner of King\'s College, London.','british-to-american'),'<span class=\"highlight\">Prof.</span> Joyner of King\'s College, London.');
         done();
     });
 
