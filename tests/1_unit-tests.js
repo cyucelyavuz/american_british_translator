@@ -112,6 +112,11 @@ suite ('Extras', ()=>{
 })
 
 suite ('Highlith translation', ()=>{
+    test ('Mangoes are my favorite fruit.', done => { 
+        assert.equal (translator.translate('Mangoes are my favorite fruit.','american-to-british'),'Mangoes are my <span class=\"highlight\">favourite</span> fruit.');
+        done();
+    });
+
     test ('I ate yogurt for breakfast.', done => { 
         assert.equal (translator.translate('I ate yogurt for breakfast.','american-to-british'),'I ate <span class=\"highlight\">yoghurt</span> for breakfast.');
         done();
