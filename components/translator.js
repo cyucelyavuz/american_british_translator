@@ -48,9 +48,7 @@ class Translator {
         wordsArr.forEach((elem,i)=> (elem.toLowerCase() in americanToBritishSpelling) ?
                                      wordsArr[i]='<span class=highlight>'+americanToBritishSpelling[elem.toLowerCase()]+'</span>':
                                      wordsArr[i]=elem);
-        /*wordsArr.forEach((elem,i)=> (elem.toLowerCase() in americanToBritishTitles) ?
-                                     wordsArr[i]='<span class=highlight>'+americanToBritishTitles[elem.toLowerCase()]+'</span>':
-                                     wordsArr[i]=elem);   */
+        
         wordsArr.forEach((elem,i)=>{     
            if (/\.|\,|\?|\!/.test(elem) && elem.length===1) {
             wordsArr[i-1]+=wordsArr[i];
@@ -81,7 +79,7 @@ class Translator {
                 else if(/[0-9]{1,2}\.[0-9]{2}/.test(word)) {
                     
                     newArr.push('<span class=highlight>'+word.split('.')[0]+':'+word.split('.')[1]+'</span>');
-                    console.log(newArr);
+                    //console.log(newArr);
                 }
                 else if(puncReg.test(word)) {
                     newArr.push(word.split(puncReg)[0]);
@@ -141,15 +139,15 @@ class Translator {
         switch (locale){
             case 'american-to-british':
             return (this.americanToBritish(wordsArr));
-            break;
+            
 
             case 'british-to-american':
             return (this.britishToAmerican(wordsArr));
-            break;
+            
 
             default:
-
-            break;
+            return ('Invalid Translation Locale');
+            
         }
     }
 }
